@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversión de Moneda</title>
+    <script>
+        function convertirMoneda() {
+            const usd = parseFloat(prompt("Ingresa la cantidad en USD:"));
+            const tasaEuro = 0.90;
+            const tasaMXN = 20.00;
+            
+            if (isNaN(usd)) {
+                alert("Por favor, ingresa una cantidad válida.");
+                return;
+            }
+            
+            const euros = usd * tasaEuro;
+            const pesos = usd * tasaMXN;
+            
+            alert(`Cantidad en euros: ${euros.toFixed(2)} EUR\nCantidad en pesos mexicanos: ${pesos.toFixed(2)} MXN`);
+        }
+    </script>
+</head>
+<body>
+    <button onclick="convertirMoneda()">Convertir Moneda</button>
+</body>
+</html>

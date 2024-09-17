@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calificaciones de Estudiantes</title>
+    <script>
+        function calcularCalificaciones() {
+            const calificaciones = prompt("Ingresa las calificaciones separadas por coma:");
+            const listaCalificaciones = calificaciones.split(',').map(Number);
+            
+            if (listaCalificaciones.length === 0 || listaCalificaciones.some(isNaN)) {
+                alert("Por favor, ingresa calificaciones válidas.");
+                return;
+            }
+            
+            const promedio = listaCalificaciones.reduce((a, b) => a + b, 0) / listaCalificaciones.length;
+            const max = Math.max(...listaCalificaciones);
+            const min = Math.min(...listaCalificaciones);
+            
+            alert(`Promedio: ${promedio.toFixed(2)}\nCalificación más alta: ${max}\nCalificación más baja: ${min}`);
+        }
+    </script>
+</head>
+<body>
+    <button onclick="calcularCalificaciones()">Calcular Calificaciones</button>
+</body>
+</html>

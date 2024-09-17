@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cálculo de Compra</title>
+    <script>
+        function calcularTotalCompra() {
+            const cantidad = parseFloat(prompt("Ingresa la cantidad de productos:"));
+            const precio = parseFloat(prompt("Ingresa el precio de cada producto:"));
+            
+            if (isNaN(cantidad) || isNaN(precio)) {
+                alert("Por favor, ingresa valores válidos.");
+                return;
+            }
+            
+            const totalCompra = cantidad * precio;
+            const impuesto = totalCompra * 0.12;
+            const totalPagar = totalCompra + impuesto;
+            
+            alert(`Monto total a pagar (mas impuesto del 12%): ${totalPagar.toFixed(2)}$`);
+        }
+    </script>
+</head>
+<body>
+    <button onclick="calcularTotalCompra()">Calcular Total de Compra</button>
+</body>
+</html>
